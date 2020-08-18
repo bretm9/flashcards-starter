@@ -3,6 +3,7 @@ const expect = chai.expect;
 
 const Turn = require('../src/Turn');
 const Card = require('../src/Card');
+const { it } = require('mocha');
 
 describe('Turn', function() {
   it('should be a function', function() {
@@ -23,6 +24,10 @@ describe('Turn', function() {
   it('should store a card object', function() {
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn = new Turn('object', card);
-
   });
-})
+
+  it('should have a method returnGuess that returns the guess', function() {
+    const turn = new Turn('object');
+    expect(turn.returnGuess()).to.equal('object');
+  });
+});
