@@ -21,6 +21,10 @@ class Round {
     }
     return newTurn.giveFeedback();
   }
+
+  calculatePercentCorrect() {
+    
+  }
 }
 
 module.exports = Round;
