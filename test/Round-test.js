@@ -128,6 +128,9 @@ describe('Round', function() {
     const cards = [card1, card2, card3];
     const deck = new Deck(cards);
     const round = new Round(deck);
-    expect(round.calculatePercentCorrect()).to.equal()
+    round.takeTurn('object');
+    round.takeTurn('pizza');
+    round.takeTurn('pizza');
+    expect(round.calculatePercentCorrect()).to.equal(66)
   });
 });
