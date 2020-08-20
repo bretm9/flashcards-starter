@@ -2,7 +2,8 @@ const data = require('./data');
 const prototypeQuestions = data.prototypeData;
 const util = require('./util');
 const Deck = require('./Deck')
-const Card = require('./Card')
+const Card = require('./Card');
+const Round = require('./Round');
 
 class Game {
   constructor() {}
@@ -17,8 +18,7 @@ class Game {
   }
 
   // start()
-    // buildDeck()
-    // beginRound() 
+    // beginRound(buildDeck()) 
     // printmessage()
     //  printQuestion()
 
@@ -29,6 +29,12 @@ class Game {
     }
     return new Deck(cards);
   }
+
+  beginRound(deck) {
+    this.currentRound = new Round(deck);
+  }
+
+
 }
 
 module.exports = Game;
