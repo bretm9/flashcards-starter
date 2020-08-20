@@ -18,16 +18,16 @@ class Game {
   }
 
   start() {
-    let deck = this.buildDeck();
+    let deck = this.buildDeck(prototypeQuestions);
     this.beginRound(deck);
     this.printMessage(this.currentRound.deck, this.currentRound);
      this.printQuestion(this.currentRound);
   }
 
-  buildDeck() {
+  buildDeck(dataset) {
     const cards = []
-    for (var i = 0; i < prototypeQuestions.length; i++) {
-      cards[i] = new Card(prototypeQuestions[i].id, prototypeQuestions[i].question, prototypeQuestions[i].answers, prototypeQuestions[i].correctAnswer)
+    for (var i = 0; i < dataset.length; i++) {
+      cards[i] = new Card(dataset[i].id, dataset[i].question, dataset[i].answers, dataset[i].correctAnswer)
     }
     return new Deck(cards);
   }
