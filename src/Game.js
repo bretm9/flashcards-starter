@@ -18,7 +18,8 @@ class Game {
   }
 
   start() {
-    this.beginRound(this.buildDeck());
+    let deck = this.buildDeck();
+    this.beginRound(deck);
     this.printMessage(this.currentRound.deck, this.currentRound);
      this.printQuestion(this.currentRound);
   }
