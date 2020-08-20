@@ -49,4 +49,9 @@ describe('Game', function() {
     game.beginRound(deck);
     expect(game.currentRound.deck).to.equal(deck);
   });
+
+  it('should have a method start', function() {
+    const game = new Game();
+    expect(game.start).to.be.a('function');
+  });
 });

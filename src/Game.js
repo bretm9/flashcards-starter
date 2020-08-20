@@ -17,10 +17,11 @@ class Game {
       util.main(round);
   }
 
-  // start()
-    // beginRound(buildDeck()) 
-    // printmessage()
-    //  printQuestion()
+  start() {
+    this.beginRound(this.buildDeck());
+    this.printMessage(this.currentRound.deck, this.currentRound);
+     this.printQuestion(this.currentRound);
+  }
 
   buildDeck() {
     const cards = []
@@ -33,8 +34,6 @@ class Game {
   beginRound(deck) {
     this.currentRound = new Round(deck);
   }
-
-
 }
 
 module.exports = Game;
