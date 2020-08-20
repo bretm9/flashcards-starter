@@ -143,16 +143,4 @@ describe('Round', function() {
     const round = new Round(deck);
     expect(round.endRound).to.be.a('function');
   });
-  it('endRound should return that the round has ended and percent of correct answers', function() {
-    const card1 = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
-    const card2 = new Card(2, "What's a food?", ['object', 'array', 'pizza'], 'pizza');
-    const card3 = new Card(3, "What's my favorite food?", ['pizza', 'sushi', 'oatmeal'], 'sushi');
-    const cards = [card1, card2, card3];
-    const deck = new Deck(cards);
-    const round = new Round(deck);
-    round.takeTurn('object');
-    round.takeTurn('pizza');
-    round.takeTurn('pizza');
-    expect(round.endRound()).to.equal('Round over! you answered 66% of the questions correctly');
-  });
 });
