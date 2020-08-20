@@ -8,7 +8,7 @@ class Round {
   }
 
   returnCurrentCard() {
-    if(this.deck.cards.length > 0) {
+    if (this.deck.cards.length > 0) {
       return this.deck.cards[0];
     }
     return null;
