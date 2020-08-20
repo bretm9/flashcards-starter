@@ -25,10 +25,9 @@ class Game {
   }
 
   buildDeck(dataset) {
-    const cards = []
-    for (var i = 0; i < dataset.length; i++) {
-      cards[i] = new Card(dataset[i].id, dataset[i].question, dataset[i].answers, dataset[i].correctAnswer)
-    }
+    const cards = dataset.map(data => {
+      return new Card(data.id, data.question, data.answers, data.correctAnswer);
+    })
     return new Deck(cards);
   }
 
