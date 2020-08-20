@@ -27,7 +27,7 @@ class Game {
   buildDeck(dataset) {
     const cards = dataset.map(data => {
       return new Card(data.id, data.question, data.answers, data.correctAnswer);
-    })
+    });
     return new Deck(cards);
   }
 
