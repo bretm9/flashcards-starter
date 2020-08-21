@@ -31,7 +31,11 @@ describe('Round', () => {
     expect(round).to.be.an.instanceof(Round);
   });
 
-  it('should have a deck property that is equal to the deck', () => {
+  it('should have default values for turns and incorrect guess properties', () => {
+    expect(round.turns).to.equal(0);
+  });
+
+  it('should store a deck', () => {
     expect(round.deck).to.equal(deck);
   });
 
@@ -64,12 +68,6 @@ describe('Round', () => {
   });
   
   it('takeTurn should give appropriate feedback when guess is correct', () => {
-    const card1 = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
-    const card2 = new Card(2, "What's a food?", ['object', 'array', 'pizza'], 'pizza');
-    const card3 = new Card(3, "What's my favorite food?", ['pizza', 'sushi', 'oatmeal'], 'sushi');
-    const cards = [card1, card2, card3];
-    const deck = new Deck(cards);
-    const round = new Round(deck);
     expect(round.takeTurn('object')).to.equal('correct!');
   });
 
