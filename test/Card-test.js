@@ -1,13 +1,17 @@
 const chai = require('chai');
 const expect = chai.expect;
+const data = require('../src/data');
+const prototypeQuestions = data.prototypeData;
 
 const Card = require('../src/Card');
 
 describe('Card', () => {
-  let card;
+  let cards;
   
   beforeEach(() => {
-    card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    cards = prototypeQuestions.map(data => {
+      return new Card(data.id, data.question, data.answers, data.correctAnswer);
+    });
   });
 
   it('should be a function', () => {
@@ -15,18 +19,22 @@ describe('Card', () => {
   });
 
   it('should be an instance of Card', () => {
-    expect(card).to.be.an.instanceof(Card);
-  }); 
+    expect(cards[0]).to.be.an.instanceof(Card);
+  });
+
+  it('should store an id', () => {
+    expect(cards[0].id).to.equal(1);
+  });
 
   it('should store a question', () => {
-    expect(card.question).to.equal('What allows you to define a set of related information using key-value pairs?');
+    expect(cards[0].question).to.equal('What allows you to define a set of related information using key-value pairs?');
   });  
 
   it('should store a list of possible answers', () => {
-    expect(card.answers).to.deep.equal(['object', 'array', 'function']);
+    expect(cards[0].answers).to.deep.equal(['object', 'array', 'function']);
   });  
 
   it('should store the correct answer', () => {
-    expect(card.correctAnswer).to.equal('object');
+    expect(cards[0].correctAnswer).to.equal('object');
   });
 });

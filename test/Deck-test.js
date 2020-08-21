@@ -1,22 +1,20 @@
 const chai = require('chai');
 const expect = chai.expect;
+const data = require('../src/data');
+const prototypeQuestions = data.prototypeData;
 
 const Deck = require('../src/Deck');
 const Card = require('../src/Card');
 const { it } = require('mocha');
 
 describe('Deck', () => {
-  let card1;
-  let card2;
-  let card3;
   let cards;
   let deck;
   
   beforeEach(() => {
-    card1 = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
-    card2 = new Card(2, "What's a food?", ['object', 'array', 'pizza'], 'pizza');
-    card3 = new Card(3, "What's my favorite food?", ['pizza', 'sushi', 'oatmeal'], 'sushi');
-    cards = [card1, card2, card3];
+    cards = prototypeQuestions.map(data => {
+      return new Card(data.id, data.question, data.answers, data.correctAnswer);
+    });
     deck = new Deck(cards);
   });
 
@@ -33,6 +31,6 @@ describe('Deck', () => {
   });
 
   it('should have a method countCards that counts how many cards are in the deck', () => {
-    expect(deck.countCards()).to.equal(3);
+    expect(deck.countCards()).to.equal(30);
   });
 });
