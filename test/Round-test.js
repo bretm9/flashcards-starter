@@ -9,9 +9,6 @@ const Deck = require('../src/Deck');
 const { it } = require('mocha');
 
 describe('Round', () => {
-  let card1;
-  let card2;
-  let card3;
   let cards;
   let deck;
   let round;
