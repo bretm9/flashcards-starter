@@ -36,7 +36,7 @@ If the player answers correctly or incorrectly, appropriate feedback is produced
 
 Once all the flashcards have been answered, the console produces a message about the percentage of questions the player answered correctly, and the game ends.
 
-![flash cards example gif](https://media.giphy.com/media/1zkb1q58eTiTH6D7wc/giphy.gif)
+![flash cards example gif](https://media.giphy.com/media/Ymi1wtKPc3XFb1qRbv/giphy.gif)
  > [Back to the top](#flashcards)
 ---
 
