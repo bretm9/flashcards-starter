@@ -8,7 +8,7 @@ const Round = require('./Round');
 class Game {
   constructor() {}
 
-  printMessage(deck, round) {
+  printMessage(deck) {
       console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
 -----------------------------------------------------------------------`)
   }
