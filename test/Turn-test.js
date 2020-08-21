@@ -1,19 +1,23 @@
 const chai = require('chai');
 const expect = chai.expect;
+const data = require('../src/data');
+const prototypeQuestions = data.prototypeData;
 
 const Turn = require('../src/Turn');
 const Card = require('../src/Card');
 const { it } = require('mocha');
 
 describe('Turn', () => {
-  let card;
+  let cards;
   let turnCorrect;
   let turnIncorrect;
 
   beforeEach(() => {
-    card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
-    turnCorrect = new Turn('object', card);
-    turnIncorrect = new Turn('array', card);
+    cards = prototypeQuestions.map(data => {
+      return new Card(data.id, data.question, data.answers, data.correctAnswer);
+    });
+    turnCorrect = new Turn('object', cards[0]);
+    turnIncorrect = new Turn('array', cards[0]);
   });
 
   it('should be a function', () => {
@@ -29,7 +33,7 @@ describe('Turn', () => {
   });
   
   it('should store a card object', () => {
-    expect(turnCorrect.cardInPlay).to.equal(card);
+    expect(turnCorrect.cardInPlay).to.equal(cards[0]);
   });
 
   it('should have a method returnGuess that returns the guess', () => {
@@ -37,7 +41,7 @@ describe('Turn', () => {
   });
 
   it('should have a method returnCard that returns the Card', () => {
-    expect(turnCorrect.returnCard()).to.equal(card);
+    expect(turnCorrect.returnCard()).to.equal(cards[0]);
   });
 
   it("should have a method evaluateGuess that returns true if guess is correct", () => {
