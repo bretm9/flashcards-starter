@@ -1,4 +1,46 @@
-# FlashCards Starter Kit
+# FlashCards
+
+> A Front-End Project by [Bret Merritt](https://github.com/bretm9)
+
+---
+## Contents
+1. [Overview](#overview)
+1. [Technologies](#technologies)
+1. [Gameplay](#gameplay)
+1. [Install Guide](#install-guide)
+---
+
+## Overview
+I am a Front-End student at Turing School of Software and Design. This project was my first assignment for Module 2. My main focus for this project was test-driven-design (or TDD).
+
+This console tool allows users to play games of flashcards, and track their correct guesses.
+
+## Technologies
+
+  - Javascript
+  - Mocha/Chai
+  - Linter
+  - Node
+  - Git
+
+ > [Back to the top](#flashcards)
+---
+
+# Gameplay
+
+When the game starts, a message pops up in the console telling the player that a new game has begun, and indicates how many flashcards are in the deck.
+
+The player is provided with a new question in the console, along with three answers to choose from. 
+
+If the player answers correctly or incorrectly, appropriate feedback is produced, and the player is promted with a new question. 
+
+Once all the flashcards have been answered, the console produces a message about the percentage of questions the player answered correctly, and the game ends.
+
+![flash cards example gif](https://media.giphy.com/media/1zkb1q58eTiTH6D7wc/giphy.gif)
+ > [Back to the top](#flashcards)
+---
+
+# Install Guide
 
 ## Fork This Repo
 
@@ -6,74 +48,26 @@ On the top right corner of this page, click the **Fork** button.
 
 ## Setup
 
-Clone down the forked repo (from your GitHub). Since you don't want to name your project "flashcards-starter", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments):
+Clone down the forked repo (from your GitHub):
 
 ```bash
-git clone [remote-address] [what you want to name the repo]
+git clone git@github.com:bretm9/flashcards-starter.git
 ```
 
-Once you have cloned the repo, change into the directory and install the library dependencies. Run:
+Once you have cloned the repo, change into the directory using `cd` and install the library dependencies. Run:
 
 ```bash
 npm install
 ```
 
-To verify that it is setup correctly, run `npm test` in your terminal. You should have 5 pending tests in your `Card` test file that show up.
+## Start Game
 
-Running `node index.js` from the root of your project should result in the following message being displayed in your terminal: 
+Run `node index.js` from the root of your cloned repo to start the game.
 
-```bash
-Node server running on port 3000
-```
+## How To Play
 
-*Note that you will not need to you run your server until you are instantiating your `Game` class in Iteration 3. Prior to that, you should be using TDD to drive your code. You should check the functionality of your application by running your tests via `npm test`.*
-
-
-## Where to Add Your Code
-
-### JavaScript
-
-**Create all of your feature code files in the `src` directory.**
-
-We will be using the `module.exports` and `require` syntax to share code across files.
-
-## How to View Your Code in Action
-
-Once you are working through Iteration 3, you will want to start your server to test your functionality.
-In the terminal, run:
-
-```bash
-node index.js
-```
-
-When the game is functioning appropriately, you will be prompted for each question, have the opportunity to select an answer, and will be given feedback. You will be able to play through the entire deck of cards:
-
-![flash cards example gif](https://media.giphy.com/media/1zkb1q58eTiTH6D7wc/giphy.gif)
-
----
-
-## Test Files Organization
-
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
-
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `Round-test.js`.
-
-## Running Your Tests
-
-Run your test suite using the command:
-
-```bash
-npm test
-```
-
-The test results will output to the terminal.
-
----
-
-## Linting Your Code
-
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit - the linter is still running successfully.
-
-Your linter will look at the JavaScript files you have within the `src` directory and the `test` directory. 
-
+When playing a game, use the arrow keys to select your answer, and hit enter to confirm. 
+To exit the game and get back to your normal terminal functionality, hit control-C.
+ 
+ > [Back to the top](#flashcards)
 ---
