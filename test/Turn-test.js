@@ -6,9 +6,9 @@ const Card = require('../src/Card');
 const { it } = require('mocha');
 
 describe('Turn', () => {
-  let card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
-  let turnCorrect = new Turn('object', card);
-  let turnIncorrect = new Turn('array', card);
+  let card;
+  let turnCorrect;
+  let turnIncorrect;
 
   beforeEach(() => {
     card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
